@@ -7,18 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E945EE479F29D54EFA38C42 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D60D13F5442CB8EA13C693 /* libPods.a */; };
 		BD1A2A141C4B38CE000039E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1A2A131C4B38CE000039E5 /* main.m */; };
 		BD1A2A171C4B38CE000039E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1A2A161C4B38CE000039E5 /* AppDelegate.m */; };
-		BD1A2A1D1C4B38CE000039E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD1A2A1B1C4B38CE000039E5 /* Main.storyboard */; };
 		BD1A2A1F1C4B38CE000039E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD1A2A1E1C4B38CE000039E5 /* Assets.xcassets */; };
 		BD1A2A2D1C4B38CE000039E5 /* IPropertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1A2A2C1C4B38CE000039E5 /* IPropertyTests.m */; };
 		BD1A2A381C4B38CE000039E5 /* IPropertyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1A2A371C4B38CE000039E5 /* IPropertyUITests.m */; };
 		BD1A2A4B1C4B3A06000039E5 /* AppStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1A2A491C4B3A06000039E5 /* AppStartViewController.m */; };
 		BD1A2A501C4B3A3A000039E5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1A2A4E1C4B3A3A000039E5 /* LoginViewController.m */; };
 		BD1A2A551C4B3A4C000039E5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1A2A531C4B3A4C000039E5 /* MainViewController.m */; };
-		BD1A2A561C4B3A4C000039E5 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD1A2A541C4B3A4C000039E5 /* MainViewController.xib */; };
 		BD1A2A581C4B3C51000039E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD1A2A571C4B3C51000039E5 /* Images.xcassets */; };
-		BD59A19B1C4BDED60054983F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD59A19A1C4BDED60054983F /* RegisterViewController.m */; };
+		BD40E32A1C4CA5C600417BB9 /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BD40E3291C4CA5C600417BB9 /* StringUtils.m */; };
+		BD40E32F1C4CA8E800417BB9 /* CKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = BD40E32E1C4CA8E800417BB9 /* CKeyChain.m */; };
+		BD40E3321C4CAA8000417BB9 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD40E3311C4CAA8000417BB9 /* UserDataManager.m */; };
+		BD40E3341C4CB10900417BB9 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD40E3331C4CB10900417BB9 /* Config.plist */; };
+		BD59A1A11C4BED5A0054983F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD59A1A01C4BED5A0054983F /* RegisterViewController.m */; };
+		BD59A1A41C4BFB140054983F /* MySettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD59A1A31C4BFB140054983F /* MySettingViewController.m */; };
+		BD5B21C21C4C62260017DF3B /* MySendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5B21C11C4C62260017DF3B /* MySendViewController.m */; };
+		BD5B21C51C4C63AB0017DF3B /* IWantSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5B21C41C4C63AB0017DF3B /* IWantSendViewController.m */; };
+		BD5B21C81C4C68790017DF3B /* UIPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5B21C71C4C68790017DF3B /* UIPlaceholderTextView.m */; };
+		BD5B21CB1C4C7C970017DF3B /* PasswrodChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5B21CA1C4C7C970017DF3B /* PasswrodChangeViewController.m */; };
+		BD7A674F1C4D2C77003949A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7A674E1C4D2C77003949A5 /* Main.storyboard */; };
+		BDD3EB2C1C4C8BDD00882CDC /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD3EB2B1C4C8BDD00882CDC /* FeedBackViewController.m */; };
+		BDD3EB2F1C4C8F8300882CDC /* AboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD3EB2E1C4C8F8300882CDC /* AboutUSViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		352E9E5435A24C501A0E7740 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		86D60D13F5442CB8EA13C693 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4E2EB483AD54BB64FE28832 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BD1A2A0F1C4B38CE000039E5 /* IProperty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IProperty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1A2A131C4B38CE000039E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BD1A2A151C4B38CE000039E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BD1A2A161C4B38CE000039E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BD1A2A1C1C4B38CE000039E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD1A2A1E1C4B38CE000039E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD1A2A231C4B38CE000039E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD1A2A281C4B38CE000039E5 /* IPropertyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IPropertyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,11 +71,32 @@
 		BD1A2A4E1C4B3A3A000039E5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BD1A2A521C4B3A4C000039E5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		BD1A2A531C4B3A4C000039E5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		BD1A2A541C4B3A4C000039E5 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		BD1A2A571C4B3C51000039E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BD40E3281C4CA5C600417BB9 /* StringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtils.h; sourceTree = "<group>"; };
+		BD40E3291C4CA5C600417BB9 /* StringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtils.m; sourceTree = "<group>"; };
+		BD40E32D1C4CA8E800417BB9 /* CKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKeyChain.h; sourceTree = "<group>"; };
+		BD40E32E1C4CA8E800417BB9 /* CKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKeyChain.m; sourceTree = "<group>"; };
+		BD40E3301C4CAA8000417BB9 /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataManager.h; sourceTree = "<group>"; };
+		BD40E3311C4CAA8000417BB9 /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataManager.m; sourceTree = "<group>"; };
+		BD40E3331C4CB10900417BB9 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		BD59A1981C4BBA1C0054983F /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		BD59A1991C4BDED60054983F /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
-		BD59A19A1C4BDED60054983F /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		BD59A19F1C4BED5A0054983F /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		BD59A1A01C4BED5A0054983F /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		BD59A1A21C4BFB140054983F /* MySettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySettingViewController.h; sourceTree = "<group>"; };
+		BD59A1A31C4BFB140054983F /* MySettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySettingViewController.m; sourceTree = "<group>"; };
+		BD5B21C01C4C62260017DF3B /* MySendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySendViewController.h; sourceTree = "<group>"; };
+		BD5B21C11C4C62260017DF3B /* MySendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySendViewController.m; sourceTree = "<group>"; };
+		BD5B21C31C4C63AB0017DF3B /* IWantSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWantSendViewController.h; sourceTree = "<group>"; };
+		BD5B21C41C4C63AB0017DF3B /* IWantSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWantSendViewController.m; sourceTree = "<group>"; };
+		BD5B21C61C4C68790017DF3B /* UIPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceholderTextView.h; sourceTree = "<group>"; };
+		BD5B21C71C4C68790017DF3B /* UIPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceholderTextView.m; sourceTree = "<group>"; };
+		BD5B21C91C4C7C970017DF3B /* PasswrodChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswrodChangeViewController.h; sourceTree = "<group>"; };
+		BD5B21CA1C4C7C970017DF3B /* PasswrodChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswrodChangeViewController.m; sourceTree = "<group>"; };
+		BD7A674E1C4D2C77003949A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BDD3EB2A1C4C8BDD00882CDC /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
+		BDD3EB2B1C4C8BDD00882CDC /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
+		BDD3EB2D1C4C8F8300882CDC /* AboutUSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUSViewController.h; sourceTree = "<group>"; };
+		BDD3EB2E1C4C8F8300882CDC /* AboutUSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUSViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E945EE479F29D54EFA38C42 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +125,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A2236E65F9FAE2E7F762560 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86D60D13F5442CB8EA13C693 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A061151EC906A25F46332E57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4E2EB483AD54BB64FE28832 /* Pods.debug.xcconfig */,
+				352E9E5435A24C501A0E7740 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BD1A2A061C4B38CE000039E5 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +149,8 @@
 				BD1A2A2B1C4B38CE000039E5 /* IPropertyTests */,
 				BD1A2A361C4B38CE000039E5 /* IPropertyUITests */,
 				BD1A2A101C4B38CE000039E5 /* Products */,
+				A061151EC906A25F46332E57 /* Pods */,
+				2A2236E65F9FAE2E7F762560 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,16 +167,18 @@
 		BD1A2A111C4B38CE000039E5 /* IProperty */ = {
 			isa = PBXGroup;
 			children = (
+				BD40E3211C4CA0B200417BB9 /* Utils */,
 				BD1A2A471C4B39ED000039E5 /* View */,
 				BD1A2A461C4B39DE000039E5 /* Controller */,
 				BD1A2A151C4B38CE000039E5 /* AppDelegate.h */,
 				BD1A2A161C4B38CE000039E5 /* AppDelegate.m */,
-				BD1A2A1B1C4B38CE000039E5 /* Main.storyboard */,
 				BD1A2A1E1C4B38CE000039E5 /* Assets.xcassets */,
 				BD1A2A231C4B38CE000039E5 /* Info.plist */,
 				BD1A2A121C4B38CE000039E5 /* Supporting Files */,
 				BD1A2A571C4B3C51000039E5 /* Images.xcassets */,
 				BD59A1981C4BBA1C0054983F /* Config.h */,
+				BD40E3331C4CB10900417BB9 /* Config.plist */,
+				BD7A674E1C4D2C77003949A5 /* Main.storyboard */,
 			);
 			path = IProperty;
 			sourceTree = "<group>";
@@ -162,9 +218,20 @@
 				BD1A2A4E1C4B3A3A000039E5 /* LoginViewController.m */,
 				BD1A2A521C4B3A4C000039E5 /* MainViewController.h */,
 				BD1A2A531C4B3A4C000039E5 /* MainViewController.m */,
-				BD1A2A541C4B3A4C000039E5 /* MainViewController.xib */,
-				BD59A1991C4BDED60054983F /* RegisterViewController.h */,
-				BD59A19A1C4BDED60054983F /* RegisterViewController.m */,
+				BD59A19F1C4BED5A0054983F /* RegisterViewController.h */,
+				BD59A1A01C4BED5A0054983F /* RegisterViewController.m */,
+				BD59A1A21C4BFB140054983F /* MySettingViewController.h */,
+				BD59A1A31C4BFB140054983F /* MySettingViewController.m */,
+				BD5B21C01C4C62260017DF3B /* MySendViewController.h */,
+				BD5B21C11C4C62260017DF3B /* MySendViewController.m */,
+				BD5B21C31C4C63AB0017DF3B /* IWantSendViewController.h */,
+				BD5B21C41C4C63AB0017DF3B /* IWantSendViewController.m */,
+				BD5B21C91C4C7C970017DF3B /* PasswrodChangeViewController.h */,
+				BD5B21CA1C4C7C970017DF3B /* PasswrodChangeViewController.m */,
+				BDD3EB2A1C4C8BDD00882CDC /* FeedBackViewController.h */,
+				BDD3EB2B1C4C8BDD00882CDC /* FeedBackViewController.m */,
+				BDD3EB2D1C4C8F8300882CDC /* AboutUSViewController.h */,
+				BDD3EB2E1C4C8F8300882CDC /* AboutUSViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -172,8 +239,23 @@
 		BD1A2A471C4B39ED000039E5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BD5B21C61C4C68790017DF3B /* UIPlaceholderTextView.h */,
+				BD5B21C71C4C68790017DF3B /* UIPlaceholderTextView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BD40E3211C4CA0B200417BB9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BD40E3281C4CA5C600417BB9 /* StringUtils.h */,
+				BD40E3291C4CA5C600417BB9 /* StringUtils.m */,
+				BD40E32D1C4CA8E800417BB9 /* CKeyChain.h */,
+				BD40E32E1C4CA8E800417BB9 /* CKeyChain.m */,
+				BD40E3301C4CAA8000417BB9 /* UserDataManager.h */,
+				BD40E3311C4CAA8000417BB9 /* UserDataManager.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,9 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD1A2A3C1C4B38CE000039E5 /* Build configuration list for PBXNativeTarget "IProperty" */;
 			buildPhases = (
+				947D34995B98CA2EE8969D21 /* Check Pods Manifest.lock */,
 				BD1A2A0B1C4B38CE000039E5 /* Sources */,
 				BD1A2A0C1C4B38CE000039E5 /* Frameworks */,
 				BD1A2A0D1C4B38CE000039E5 /* Resources */,
+				91378AF46F603663A47852B4 /* Embed Pods Frameworks */,
+				30E58F3B76D336DFEF9E9C6F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -279,10 +364,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD1A2A561C4B3A4C000039E5 /* MainViewController.xib in Resources */,
+				BD40E3341C4CB10900417BB9 /* Config.plist in Resources */,
 				BD1A2A581C4B3C51000039E5 /* Images.xcassets in Resources */,
 				BD1A2A1F1C4B38CE000039E5 /* Assets.xcassets in Resources */,
-				BD1A2A1D1C4B38CE000039E5 /* Main.storyboard in Resources */,
+				BD7A674F1C4D2C77003949A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,14 +387,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		30E58F3B76D336DFEF9E9C6F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91378AF46F603663A47852B4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		947D34995B98CA2EE8969D21 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BD1A2A0B1C4B38CE000039E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD40E3321C4CAA8000417BB9 /* UserDataManager.m in Sources */,
+				BD5B21C21C4C62260017DF3B /* MySendViewController.m in Sources */,
+				BD40E32A1C4CA5C600417BB9 /* StringUtils.m in Sources */,
+				BD5B21C81C4C68790017DF3B /* UIPlaceholderTextView.m in Sources */,
 				BD1A2A551C4B3A4C000039E5 /* MainViewController.m in Sources */,
-				BD59A19B1C4BDED60054983F /* RegisterViewController.m in Sources */,
+				BDD3EB2C1C4C8BDD00882CDC /* FeedBackViewController.m in Sources */,
+				BDD3EB2F1C4C8F8300882CDC /* AboutUSViewController.m in Sources */,
+				BD59A1A41C4BFB140054983F /* MySettingViewController.m in Sources */,
+				BD59A1A11C4BED5A0054983F /* RegisterViewController.m in Sources */,
 				BD1A2A4B1C4B3A06000039E5 /* AppStartViewController.m in Sources */,
+				BD5B21C51C4C63AB0017DF3B /* IWantSendViewController.m in Sources */,
+				BD40E32F1C4CA8E800417BB9 /* CKeyChain.m in Sources */,
+				BD5B21CB1C4C7C970017DF3B /* PasswrodChangeViewController.m in Sources */,
 				BD1A2A171C4B38CE000039E5 /* AppDelegate.m in Sources */,
 				BD1A2A141C4B38CE000039E5 /* main.m in Sources */,
 				BD1A2A501C4B3A3A000039E5 /* LoginViewController.m in Sources */,
@@ -346,17 +489,6 @@
 			targetProxy = BD1A2A341C4B38CE000039E5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		BD1A2A1B1C4B38CE000039E5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BD1A2A1C1C4B38CE000039E5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BD1A2A3A1C4B38CE000039E5 /* Debug */ = {
@@ -441,6 +573,7 @@
 		};
 		BD1A2A3D1C4B38CE000039E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4E2EB483AD54BB64FE28832 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = IProperty/Info.plist;
@@ -452,6 +585,7 @@
 		};
 		BD1A2A3E1C4B38CE000039E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 352E9E5435A24C501A0E7740 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = IProperty/Info.plist;

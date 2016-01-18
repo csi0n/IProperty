@@ -10,6 +10,10 @@
 #import "Config.h"
 #import "MainViewController.h"
 #import "RegisterViewController.h"
+#import "StringUtils.h"
+#import "UserDataManager.h"
+#import "SVProgressHUD.h"
+#import "AFNetWorking.h"
 @interface LoginViewController (){
     UILabel *_titleLable;
     UITextField *_usernamefield,*_passwordfield;
@@ -73,14 +77,47 @@
     [self.navigationController pushViewController:reg animated:YES];
 }
 -(void)onClickSubmit:(id)sender{
-    MainViewController *main=[[MainViewController alloc]init];
-    [self.navigationController pushViewController:main animated:YES];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeFlat];
+       if ([StringUtils isEmpty:_usernamefield.text]) {
+        [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+        [SVProgressHUD showInfoWithStatus:@"用户名不能为空!"];
+        return;
+    }else if ([StringUtils isEmpty:_passwordfield.text]) {
+        [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+        [SVProgressHUD showInfoWithStatus:@"密码不能为空!"];
+        return;
+    }
+    [self Username:_usernamefield.text Password:_passwordfield.text];
+//    MainViewController *main=[[MainViewController alloc]init];
+//    [self.navigationController pushViewController:main animated:YES];
+}
+- (void)dismiss:(id)sender {
+    [SVProgressHUD dismiss];
+}
+-(void)Username:(NSString *)username Password:(NSString *)password{
+    [SVProgressHUD showWithStatus:@"登录中..."];
+    NSString *url=[NSString stringWithFormat:@"%@%@",[UserDataManager getObjectFromConfig:@"BASE_URL"],[UserDataManager getObjectFromConfig:@"url_login"]];
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithCapacity:3];
+    [dictionary setObject:[UserDataManager getObjectFromConfig:@"DEFAULT_TOKEN"] forKey:@"token"];
+    [dictionary setObject:username forKey:@"loginUsername"];
+    [dictionary setObject:password forKey:@"loginPassword"];
+    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+    AFJSONRequestSerializer *serializer=[AFJSONRequestSerializer serializer];
+    manager.requestSerializer=serializer;
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [manager POST:url parameters:dictionary  success:^(NSURLSessionDataTask *task,id responseObject) {
+        
+        NSLog(@"Responce is :%@",responseObject);
+    } failure:^(NSURLSessionDataTask *  task, NSError *  error) {
+        [SVProgressHUD showErrorWithStatus:@"登录失败!"];
+    }];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 /*
 #pragma mark - Navigation
 

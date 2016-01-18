@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SUCCESS_CODE</key>
+	<string>10</string>
+	<key>DEFAULT_TOKEN</key>
+	<string>93eeaa1966c22f675d91c6592b8502fa411f472d</string>
+	<key>url_checkUpdate</key>
+	<string>api.php/Property/Index/checkUpdate</string>
+	<key>url_changePwd</key>
+	<string>api.php/Property/Index/changePwd</string>
+	<key>url_setTop</key>
+	<string>api.php/Property/Index/setTop</string>
+	<key>url_insert</key>
+	<string>api.php/Property/Index/insert</string>
+	<key>url_feed_back</key>
+	<string>api.php/Property/User/feedback</string>
+	<key>url_cancel</key>
+	<string>api.php/Property/Index/cancel</string>
+	<key>url_lists</key>
+	<string>api.php/Property/Index/lists</string>
+	<key>url_getUserInfo</key>
+	<string>api.php/Property/Index/getUserInfo</string>
+	<key>url_login</key>
+	<string>api.php/Property/Index/checklogin</string>
+	<key>BASE_URL</key>
+	<string>http://t.wuxiweb.com/zhihuishequ/</string>
+</dict>
+</plist>
