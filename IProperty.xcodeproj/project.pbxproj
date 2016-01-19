@@ -18,16 +18,17 @@
 		BD1A2A551C4B3A4C000039E5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1A2A531C4B3A4C000039E5 /* MainViewController.m */; };
 		BD1A2A581C4B3C51000039E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD1A2A571C4B3C51000039E5 /* Images.xcassets */; };
 		BD40E32A1C4CA5C600417BB9 /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BD40E3291C4CA5C600417BB9 /* StringUtils.m */; };
-		BD40E32F1C4CA8E800417BB9 /* CKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = BD40E32E1C4CA8E800417BB9 /* CKeyChain.m */; };
 		BD40E3321C4CAA8000417BB9 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD40E3311C4CAA8000417BB9 /* UserDataManager.m */; };
 		BD40E3341C4CB10900417BB9 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD40E3331C4CB10900417BB9 /* Config.plist */; };
 		BD59A1A11C4BED5A0054983F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD59A1A01C4BED5A0054983F /* RegisterViewController.m */; };
 		BD59A1A41C4BFB140054983F /* MySettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD59A1A31C4BFB140054983F /* MySettingViewController.m */; };
+		BD59A2901C4E5ADE0040B740 /* ZYRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BD59A28F1C4E5ADE0040B740 /* ZYRadioButton.m */; };
 		BD5B21C21C4C62260017DF3B /* MySendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5B21C11C4C62260017DF3B /* MySendViewController.m */; };
 		BD5B21C51C4C63AB0017DF3B /* IWantSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5B21C41C4C63AB0017DF3B /* IWantSendViewController.m */; };
 		BD5B21C81C4C68790017DF3B /* UIPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5B21C71C4C68790017DF3B /* UIPlaceholderTextView.m */; };
 		BD5B21CB1C4C7C970017DF3B /* PasswrodChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5B21CA1C4C7C970017DF3B /* PasswrodChangeViewController.m */; };
 		BD7A674F1C4D2C77003949A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7A674E1C4D2C77003949A5 /* Main.storyboard */; };
+		BD7A67591C4D481D003949A5 /* checkLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = BD7A67581C4D481D003949A5 /* checkLogin.m */; };
 		BDD3EB2C1C4C8BDD00882CDC /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD3EB2B1C4C8BDD00882CDC /* FeedBackViewController.m */; };
 		BDD3EB2F1C4C8F8300882CDC /* AboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD3EB2E1C4C8F8300882CDC /* AboutUSViewController.m */; };
 /* End PBXBuildFile section */
@@ -74,8 +75,6 @@
 		BD1A2A571C4B3C51000039E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BD40E3281C4CA5C600417BB9 /* StringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtils.h; sourceTree = "<group>"; };
 		BD40E3291C4CA5C600417BB9 /* StringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtils.m; sourceTree = "<group>"; };
-		BD40E32D1C4CA8E800417BB9 /* CKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKeyChain.h; sourceTree = "<group>"; };
-		BD40E32E1C4CA8E800417BB9 /* CKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKeyChain.m; sourceTree = "<group>"; };
 		BD40E3301C4CAA8000417BB9 /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataManager.h; sourceTree = "<group>"; };
 		BD40E3311C4CAA8000417BB9 /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataManager.m; sourceTree = "<group>"; };
 		BD40E3331C4CB10900417BB9 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
@@ -84,6 +83,8 @@
 		BD59A1A01C4BED5A0054983F /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		BD59A1A21C4BFB140054983F /* MySettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySettingViewController.h; sourceTree = "<group>"; };
 		BD59A1A31C4BFB140054983F /* MySettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySettingViewController.m; sourceTree = "<group>"; };
+		BD59A28E1C4E5ADE0040B740 /* ZYRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYRadioButton.h; sourceTree = "<group>"; };
+		BD59A28F1C4E5ADE0040B740 /* ZYRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYRadioButton.m; sourceTree = "<group>"; };
 		BD5B21C01C4C62260017DF3B /* MySendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySendViewController.h; sourceTree = "<group>"; };
 		BD5B21C11C4C62260017DF3B /* MySendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySendViewController.m; sourceTree = "<group>"; };
 		BD5B21C31C4C63AB0017DF3B /* IWantSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWantSendViewController.h; sourceTree = "<group>"; };
@@ -93,6 +94,8 @@
 		BD5B21C91C4C7C970017DF3B /* PasswrodChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswrodChangeViewController.h; sourceTree = "<group>"; };
 		BD5B21CA1C4C7C970017DF3B /* PasswrodChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswrodChangeViewController.m; sourceTree = "<group>"; };
 		BD7A674E1C4D2C77003949A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BD7A67571C4D481D003949A5 /* checkLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = checkLogin.h; sourceTree = "<group>"; };
+		BD7A67581C4D481D003949A5 /* checkLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = checkLogin.m; sourceTree = "<group>"; };
 		BDD3EB2A1C4C8BDD00882CDC /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
 		BDD3EB2B1C4C8BDD00882CDC /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
 		BDD3EB2D1C4C8F8300882CDC /* AboutUSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUSViewController.h; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 		BD1A2A111C4B38CE000039E5 /* IProperty */ = {
 			isa = PBXGroup;
 			children = (
+				BD7A67501C4D2E1F003949A5 /* Model */,
 				BD40E3211C4CA0B200417BB9 /* Utils */,
 				BD1A2A471C4B39ED000039E5 /* View */,
 				BD1A2A461C4B39DE000039E5 /* Controller */,
@@ -239,6 +243,8 @@
 		BD1A2A471C4B39ED000039E5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BD59A28E1C4E5ADE0040B740 /* ZYRadioButton.h */,
+				BD59A28F1C4E5ADE0040B740 /* ZYRadioButton.m */,
 				BD5B21C61C4C68790017DF3B /* UIPlaceholderTextView.h */,
 				BD5B21C71C4C68790017DF3B /* UIPlaceholderTextView.m */,
 			);
@@ -250,12 +256,19 @@
 			children = (
 				BD40E3281C4CA5C600417BB9 /* StringUtils.h */,
 				BD40E3291C4CA5C600417BB9 /* StringUtils.m */,
-				BD40E32D1C4CA8E800417BB9 /* CKeyChain.h */,
-				BD40E32E1C4CA8E800417BB9 /* CKeyChain.m */,
 				BD40E3301C4CAA8000417BB9 /* UserDataManager.h */,
 				BD40E3311C4CAA8000417BB9 /* UserDataManager.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BD7A67501C4D2E1F003949A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD7A67571C4D481D003949A5 /* checkLogin.h */,
+				BD7A67581C4D481D003949A5 /* checkLogin.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,8 +464,9 @@
 				BD59A1A11C4BED5A0054983F /* RegisterViewController.m in Sources */,
 				BD1A2A4B1C4B3A06000039E5 /* AppStartViewController.m in Sources */,
 				BD5B21C51C4C63AB0017DF3B /* IWantSendViewController.m in Sources */,
-				BD40E32F1C4CA8E800417BB9 /* CKeyChain.m in Sources */,
+				BD59A2901C4E5ADE0040B740 /* ZYRadioButton.m in Sources */,
 				BD5B21CB1C4C7C970017DF3B /* PasswrodChangeViewController.m in Sources */,
+				BD7A67591C4D481D003949A5 /* checkLogin.m in Sources */,
 				BD1A2A171C4B38CE000039E5 /* AppDelegate.m in Sources */,
 				BD1A2A141C4B38CE000039E5 /* main.m in Sources */,
 				BD1A2A501C4B3A3A000039E5 /* LoginViewController.m in Sources */,

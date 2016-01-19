@@ -19,20 +19,40 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UICKeyChainStore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>YYModel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>75211A3C80B67C9DC7BB552DE9D8C24B</key>
+		<key>2602F3D0DAC534568B6AD7EEA0DD1959</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>928353533005A4198EBDA5B700D37B64</key>
+		<key>64B7D70E0C4B5F26E9750D0E8A62A8FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A24A668BF934C45CF306A85723BBDAF9</key>
+		<key>660C39BDE50361EDFAFE09BC91FDAB83</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>83525322615CB38EDD454FC404DEF547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD90D1CF7A094C80F35EA88AB6215EB5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

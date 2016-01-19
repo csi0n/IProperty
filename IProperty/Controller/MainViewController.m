@@ -53,7 +53,7 @@
     [layout_head addSubview:_headimageview];
     //昵称
     _unamelable=[[UILabel alloc] initWithFrame:CGRectMake(90, 40, 100, 20)];
-    _unamelable.text=@"csi0n";
+    _unamelable.text=_user_data.account;
     _unamelable.textColor=[UIColor blackColor];
     [layout_head addSubview:_unamelable];
     //头像一栏箭头
@@ -86,10 +86,12 @@
 }
 -(void)onClickIwantSend:(id)sender{
     IWantSendViewController *i_want_send=[[IWantSendViewController alloc]init];
+    i_want_send.user_data=_user_data;
     [self.navigationController pushViewController:i_want_send animated:YES];
 }
 -(void)onClickMySetting:(id)sender{
     MySettingViewController *setting=[[MySettingViewController alloc]init];
+    setting.user_data=_user_data;
     [self.navigationController pushViewController:setting animated:YES];
 }
 - (void)didReceiveMemoryWarning {

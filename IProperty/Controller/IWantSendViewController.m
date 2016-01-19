@@ -8,6 +8,7 @@
 
 #import "IWantSendViewController.h"
 #import "UIPlaceholderTextView.h"
+#import "ZYRadioButton.h"
 #import "Config.h"
 @interface IWantSendViewController (){
     UILabel *_titleLable;
@@ -15,10 +16,11 @@
     UITextField *_title_send,*_code_send,*_name_send;
     UIPlaceholderTextView *_content_send;
     UIScrollView *_main_scroll;
+    ZYRadioButton *rb1,*rb2;
 }
 
 @end
-
+int SEND_TYPE=0;
 @implementation IWantSendViewController
 
 - (void)viewDidLoad {
@@ -61,13 +63,30 @@
     [_name_send setBorderStyle:UITextBorderStyleRoundedRect];
     _name_send.placeholder=@"请输入姓名";
     [_main_scroll addSubview:_name_send];
-    _submit=[[UIButton alloc]initWithFrame:CGRectMake(20, 500, screen_width-40, 40)];
+    _submit=[[UIButton alloc]initWithFrame:CGRectMake(20, 550, screen_width-40, 40)];
     _submit.backgroundColor=THEME_COLOR;
     [_submit setTitle:@"发布" forState:UIControlStateNormal];
     [_submit.layer setCornerRadius:5.0];
     [_submit addTarget:self action:@selector(onClickSubmit:) forControlEvents:UIControlEventTouchUpInside];
     [_main_scroll addSubview:_submit];
-    _main_scroll.contentSize = CGSizeMake(screen_width, 540*2);
+    
+    rb1 = [[ZYRadioButton alloc] initWithGroupId:@"11" index:0];
+    rb2 = [[ZYRadioButton alloc] initWithGroupId:@"11" index:1];
+    rb1.frame=CGRectMake(20, 500, 30, 30);
+    rb2.frame=CGRectMake(screen_width-150, 500, 30, 30);
+    UILabel *label1 =[[UILabel alloc] initWithFrame:CGRectMake(60, 500, 80, 20)];
+    label1.backgroundColor = [UIColor clearColor];
+    label1.text = @"小区消息";
+    UILabel *label2 =[[UILabel alloc] initWithFrame:CGRectMake(screen_width-120, 500, 80, 20)];
+    label2.backgroundColor = [UIColor clearColor];
+    label2.text = @"重要消息";
+    [_main_scroll addSubview:rb1];
+    [_main_scroll addSubview:rb2];
+    [_main_scroll addSubview:label1];
+    [_main_scroll addSubview:label2];
+    [ZYRadioButton addObserverForGroupId:@"11" observer:self];
+
+    _main_scroll.contentSize = CGSizeMake(screen_width, 600*2);
     [_main_scroll flashScrollIndicators];
     // 是否同时运动,lock
     _main_scroll.directionalLockEnabled = YES;
@@ -75,8 +94,70 @@
     _main_scroll.showsHorizontalScrollIndicator = FALSE;
     [self.view addSubview:_main_scroll];
 }
-
+-(void)radioButtonSelectedAtIndex:(NSUInteger)index inGroup:(NSString *)groupId{
+    if (index==0) {
+        SEND_TYPE=2;
+    }else if (index==1){
+        SEND_TYPE=3;
+    }
+}
 -(void)onClickSubmit:(id)sender{
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeFlat];
+    if ([StringUtils isEmpty:_title_send.text]) {
+        [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+        [SVProgressHUD showErrorWithStatus:@"请填写标题！"];
+        return;
+    }else if ([StringUtils isEmpty:_content_send.text]){
+        [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+        [SVProgressHUD showErrorWithStatus:@"请填写内容！"];
+        return;
+    }else if ([StringUtils isEmpty:_code_send.text]){
+        [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+        [SVProgressHUD showErrorWithStatus:@"请填写身份证！"];
+        return;
+    }else if ([StringUtils isEmpty:_name_send.text]){
+        [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+        [SVProgressHUD showErrorWithStatus:@"请填写姓名！"];
+        return;
+    }else if (SEND_TYPE==0){
+        [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+        [SVProgressHUD showErrorWithStatus:@"请选择发布类型！"];
+        return;
+    }else if([StringUtils isEmpty:_user_data.village_id]){
+        [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+        [SVProgressHUD showErrorWithStatus:@"发布城市未设置,请联系管理员！"];
+        return;
+    }else{
+        [self Title:_title_send.text Content:_content_send.text Code:_code_send.text Name:_name_send.text];
+    }
+}
+-(void)Title:(NSString *)title Content:(NSString *)content Code:(NSString *)code Name:(NSString *)name{
+    [SVProgressHUD showWithStatus:@"发表中..."];
+    NSString *url=[NSString stringWithFormat:@"%@%@",[UserDataManager getObjectFromConfig:@"BASE_URL"],[UserDataManager getObjectFromConfig:@"url_insert"]];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    NSDictionary *parameters =@{@"token":[UserDataManager getObjectFromConfig:@"DEFAULT_TOKEN"],@"title":title,@"content":content,@"type_id":[NSString stringWithFormat:@"%d",SEND_TYPE],@"village_id":_user_data.village_id,@"realname":name,@"uid":code};
+    [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation,id responseObject) {
+        manager.requestSerializer.HTTPShouldHandleCookies=YES;
+        NSDictionary *resultDic=[StringUtils getDictionaryForJson:operation];
+        if ([[resultDic objectForKey:@"status"] isEqualToString:[UserDataManager getObjectFromConfig:@"SUCCESS_CODE"]]) {
+            [SVProgressHUD dismiss];
+            [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+            [SVProgressHUD showInfoWithStatus:@"发表成功！"];
+            [self onClickBack:_back];
+        }else{
+            [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+            [SVProgressHUD showInfoWithStatus:[resultDic objectForKey:@"info"]];
+        }
+    } failure:^(AFHTTPRequestOperation *operation,NSError *error){
+        [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+        [SVProgressHUD showErrorWithStatus:@"发表失败!"];
+    }];
+}
+- (void)dismiss:(id)sender {
+    [SVProgressHUD dismiss];
 }
 -(void)onClickBack:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];

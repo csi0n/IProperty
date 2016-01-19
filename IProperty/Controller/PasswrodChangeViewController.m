@@ -64,9 +64,50 @@
 
 }
 -(void)onClickChange:(id)sender{
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeFlat];
+    if ([StringUtils isEmpty:_old_password.text]) {
+        [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+        [SVProgressHUD showInfoWithStatus:@"旧密码为空!"];
+        return;
+    }else if ([StringUtils isEmpty:_new_password.text]){
+        [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+        [SVProgressHUD showInfoWithStatus:@"新密码为空!"];
+        return;
+    }else{
+        [self OldPassword:_old_password.text NewPassword:_new_password.text];
+    }
+    
 }
 -(void)onClickSendYZM:(id)sender{
 
+}
+-(void)OldPassword:(NSString *)oldpassword NewPassword:(NSString *)newpassword{
+    [SVProgressHUD showWithStatus:@"密码修改中..."];
+    NSString *url=[NSString stringWithFormat:@"%@%@",[UserDataManager getObjectFromConfig:@"BASE_URL"],[UserDataManager getObjectFromConfig:@"url_changePwd"]];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    NSDictionary *parameters =@{@"token":[UserDataManager getObjectFromConfig:@"DEFAULT_TOKEN"],@"account":_user_data.account,@"oldPwd":oldpassword,@"newPwd":newpassword};
+    [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation,id responseObject) {
+        manager.requestSerializer.HTTPShouldHandleCookies=YES;
+        NSDictionary *resultDic=[StringUtils getDictionaryForJson:operation];
+        if ([[resultDic objectForKey:@"status"] isEqualToString:[UserDataManager getObjectFromConfig:@"SUCCESS_CODE"]]) {
+            [SVProgressHUD dismiss];
+            [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+            [SVProgressHUD showInfoWithStatus:@"密码修改成功!"];
+            [self onClickBack:_back];
+        }else{
+            [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+            [SVProgressHUD showInfoWithStatus:[resultDic objectForKey:@"info"]];
+        }
+    } failure:^(AFHTTPRequestOperation *operation,NSError *error){
+        [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+        [SVProgressHUD showErrorWithStatus:@"密码修改失败!"];
+    }];
+}
+- (void)dismiss:(id)sender {
+    [SVProgressHUD dismiss];
 }
 -(void)onClickBack:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];

@@ -14,6 +14,9 @@
 #import "UserDataManager.h"
 #import "SVProgressHUD.h"
 #import "AFNetWorking.h"
+#import "checkLogin.h"
+#import "YYModel.h"
+#import "UICKeyChainStore.h"
 @interface LoginViewController (){
     UILabel *_titleLable;
     UITextField *_usernamefield,*_passwordfield;
@@ -43,6 +46,9 @@
     UIView *layout_login=[[UIView alloc]initWithFrame:CGRectMake(0, 71, screen_width, 400)];
     [self.view addSubview:layout_login];
     _usernamefield=[[UITextField alloc]initWithFrame:CGRectMake(20, 20, screen_width-40, 40)];
+    if ([StringUtils isEmpty:_username]) {
+        _usernamefield.text=_username;
+    }
     _usernamefield.placeholder=@"请输入用户名";
     [_usernamefield setBorderStyle:UITextBorderStyleRoundedRect];
     _usernamefield.backgroundColor=[UIColor whiteColor];
@@ -90,8 +96,6 @@
         return;
     }
     [self Username:_usernamefield.text Password:_passwordfield.text];
-//    MainViewController *main=[[MainViewController alloc]init];
-//    [self.navigationController pushViewController:main animated:YES];
 }
 - (void)dismiss:(id)sender {
     [SVProgressHUD dismiss];
@@ -99,19 +103,28 @@
 -(void)Username:(NSString *)username Password:(NSString *)password{
     [SVProgressHUD showWithStatus:@"登录中..."];
     NSString *url=[NSString stringWithFormat:@"%@%@",[UserDataManager getObjectFromConfig:@"BASE_URL"],[UserDataManager getObjectFromConfig:@"url_login"]];
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithCapacity:3];
-    [dictionary setObject:[UserDataManager getObjectFromConfig:@"DEFAULT_TOKEN"] forKey:@"token"];
-    [dictionary setObject:username forKey:@"loginUsername"];
-    [dictionary setObject:password forKey:@"loginPassword"];
-    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
-    AFJSONRequestSerializer *serializer=[AFJSONRequestSerializer serializer];
-    manager.requestSerializer=serializer;
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [manager POST:url parameters:dictionary  success:^(NSURLSessionDataTask *task,id responseObject) {
-        
-        NSLog(@"Responce is :%@",responseObject);
-    } failure:^(NSURLSessionDataTask *  task, NSError *  error) {
-        [SVProgressHUD showErrorWithStatus:@"登录失败!"];
+    NSDictionary *parameters =@{@"token":[UserDataManager getObjectFromConfig:@"DEFAULT_TOKEN"],@"loginUsername":username,@"loginPassword":password};
+    [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation,id responseObject) {
+        manager.requestSerializer.HTTPShouldHandleCookies=YES;
+        NSDictionary *resultDic=[StringUtils getDictionaryForJson:operation];
+        if ([[resultDic objectForKey:@"status"] isEqualToString:[UserDataManager getObjectFromConfig:@"SUCCESS_CODE"]]) {
+            checkLogin *check_login=[checkLogin yy_modelWithJSON:[resultDic objectForKey:@"data"]];
+            [SVProgressHUD dismiss];
+            UICKeyChainStore *keychain=[UICKeyChainStore keyChainStoreWithService:[UserDataManager getObjectFromConfig:@"keychain_all_info"]];
+            [keychain setString:username forKey:[UserDataManager getObjectFromConfig:@"keychain_username"] error:nil];
+            [keychain setString:password forKey:[UserDataManager getObjectFromConfig:@"keychain_password"] error:nil];
+            MainViewController *main=[[MainViewController alloc]init];
+            main.user_data=check_login;
+            [self.navigationController pushViewController:main animated:YES];
+        }else{
+            [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+            [SVProgressHUD showInfoWithStatus:[resultDic objectForKey:@"info"]];
+        }
+    } failure:^(AFHTTPRequestOperation *operation,NSError *error){
+            [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+            [SVProgressHUD showErrorWithStatus:@"登录失败!"];
     }];
 }
 - (void)didReceiveMemoryWarning {

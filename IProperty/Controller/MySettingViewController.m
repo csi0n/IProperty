@@ -10,6 +10,8 @@
 #import "PasswrodChangeViewController.h"
 #import "FeedBackViewController.h"
 #import "AboutUSViewController.h"
+#import "AppStartViewController.h"
+#import "UICKeyChainStore.h"
 #import "Config.h"
 @interface MySettingViewController (){
     UILabel *_titleLable;
@@ -105,7 +107,10 @@
     [self.view addSubview:_scroll_main];
 }
 -(void)onClickLogout:(id)sender{
-    
+    UICKeyChainStore *keychain=[UICKeyChainStore keyChainStoreWithService:[UserDataManager getObjectFromConfig:@"keychain_all_info"]];
+    keychain[[UserDataManager getObjectFromConfig:@"keychain_password"]]=nil;
+    AppStartViewController *app_start=[[AppStartViewController alloc]init];
+    [self.navigationController pushViewController:app_start animated:YES];
 }
 -(void)onClickAbout:(id)sender{
     AboutUSViewController *_about_us=[[AboutUSViewController alloc]init];
@@ -113,6 +118,7 @@
 }
 -(void)onClickPasswordChange:(id)sender{
     PasswrodChangeViewController *password_change=[[PasswrodChangeViewController alloc]init];
+    password_change.user_data=_user_data;
     [self.navigationController pushViewController:password_change animated:YES];
 }
 -(void)onClickFeedBack:(id)sender{

@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <AFNetworking.h>
 @interface StringUtils : NSObject
 + (BOOL) isEmpty:(NSString *)string;
++(NSDictionary *)getDictionaryForJson:(AFHTTPRequestOperation *)op;
 @end

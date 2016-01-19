@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>keychain_password</key>
+	<string>cn.csi0n.iproperty.allinfor.password</string>
+	<key>keychain_username</key>
+	<string>cn.csi0n.iproperty.allinfor.username</string>
+	<key>keychain_all_info</key>
+	<string>cn.csi0n.iproperty.allinfor</string>
 	<key>SUCCESS_CODE</key>
 	<string>10</string>
 	<key>DEFAULT_TOKEN</key>
@@ -15,7 +21,7 @@
 	<key>url_insert</key>
 	<string>api.php/Property/Index/insert</string>
 	<key>url_feed_back</key>
-	<string>api.php/Property/User/feedback</string>
+	<string>api.php/User/Index/feedback</string>
 	<key>url_cancel</key>
 	<string>api.php/Property/Index/cancel</string>
 	<key>url_lists</key>

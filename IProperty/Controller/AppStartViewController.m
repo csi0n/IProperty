@@ -8,7 +8,16 @@
 
 #import "AppStartViewController.h"
 #import "LoginViewController.h"
-@interface AppStartViewController ()
+#import "AFNetWorking.h"
+#import "UserDataManager.h"
+#import "checkLogin.h"
+#import "YYModel.h"
+#import "MainViewController.h"
+#import "StringUtils.h"
+#import "UICKeyChainStore.h"
+@interface AppStartViewController (){
+    NSString *_username,*_password;
+}
 
 @end
 
@@ -28,10 +37,41 @@
     [self.view addSubview:app_start_pic];
 }
 -(void)initData{
+    UICKeyChainStore *keychain=[UICKeyChainStore keyChainStoreWithService:[UserDataManager getObjectFromConfig:@"keychain_all_info"]];
+    _username=keychain[[UserDataManager getObjectFromConfig:@"keychain_username"]];
+    _password=keychain[[UserDataManager getObjectFromConfig:@"keychain_password"]];
+    if (![StringUtils isEmpty:_username]&&![StringUtils isEmpty:_password]) {
+        NSLog(@"检测到保存的用户名:%@,密码:%@,开始自动登录!",_username,_password);
+        [self UserName:_username Password:_password];
+    }else{
+    [self PushLogin];
+    }
+}
+-(void)PushLogin{
     LoginViewController *login=[[LoginViewController alloc]init];
-    login.ID=@"1";
-    login.TITLE=@"123";
+    if ([StringUtils isEmpty:_username]) {
+        login.username=_username;
+    }
     [self.navigationController pushViewController:login animated:YES];
+}
+-(void)UserName:(NSString *)username Password:(NSString *)password{
+    NSString *url=[NSString stringWithFormat:@"%@%@",[UserDataManager getObjectFromConfig:@"BASE_URL"],[UserDataManager getObjectFromConfig:@"url_login"]];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    NSDictionary *parameters =@{@"token":[UserDataManager getObjectFromConfig:@"DEFAULT_TOKEN"],@"loginUsername":username,@"loginPassword":password};
+    [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation,id responseObject) {
+        NSDictionary *resultDic=[StringUtils getDictionaryForJson:operation];
+        if ([[resultDic objectForKey:@"status"] isEqualToString:[UserDataManager getObjectFromConfig:@"SUCCESS_CODE"]]) {
+            checkLogin *check_login=[checkLogin yy_modelWithJSON:[resultDic objectForKey:@"data"]];
+            MainViewController *main=[[MainViewController alloc]init];
+            main.user_data=check_login;
+            [self.navigationController pushViewController:main animated:YES];
+        }else{
+            [self PushLogin];
+        }
+    } failure:^(AFHTTPRequestOperation *operation,NSError *error){
+            [self PushLogin];
+        }];
 }
 
 - (void)didReceiveMemoryWarning {

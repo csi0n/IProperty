@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "checkLogin.h"
 @interface MySettingViewController : UIViewController
-
+@property(nonatomic,strong) checkLogin *user_data;
 @end

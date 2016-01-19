@@ -21,4 +21,10 @@
     }
     return NO;
 }
++(NSDictionary *)getDictionaryForJson:(AFHTTPRequestOperation *)op{
+    NSString *requestTmp=[NSString stringWithString:op.responseString];
+    NSData *resData=[[NSData alloc]initWithData:[requestTmp dataUsingEncoding:NSUTF8StringEncoding]];
+    NSDictionary *resultDic=[NSJSONSerialization JSONObjectWithData:resData options:NSJSONReadingMutableLeaves error:nil];
+    return resultDic;
+}
 @end

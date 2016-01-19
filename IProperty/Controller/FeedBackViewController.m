@@ -9,6 +9,10 @@
 #import "FeedBackViewController.h"
 #import "Config.h"
 #import "UIPlaceholderTextView.h"
+#import "SVProgressHUD.h"
+#import "UserDataManager.h"
+#import "AFNetWorking.h"
+#import "StringUtils.h"
 @interface FeedBackViewController (){
     UILabel *_titleLable;
     UIButton *_back,*_submit;
@@ -60,7 +64,44 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)onClickSend:(id)sender{
-
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeFlat];
+    if ([StringUtils isEmpty:_feed_content.text]) {
+        [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+        [SVProgressHUD showInfoWithStatus:@"反馈内容为空!"];
+        return;
+    }else{
+        [self FeedContent:_feed_content.text];
+    }
+}
+-(void)FeedContent:(NSString *)content{
+    [SVProgressHUD showWithStatus:@"反馈中..."];
+    NSString *url=[NSString stringWithFormat:@"%@%@",[UserDataManager getObjectFromConfig:@"BASE_URL"],[UserDataManager getObjectFromConfig:@"url_feed_back"]];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    NSDictionary *parameters =@{@"token":[UserDataManager getObjectFromConfig:@"DEFAULT_TOKEN"],@"content":content};
+    NSLog(@"%@",url);
+    [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation,id responseObject) {
+        manager.requestSerializer.HTTPShouldHandleCookies=YES;
+        NSDictionary *resultDic=[StringUtils getDictionaryForJson:operation];
+        if ([[resultDic objectForKey:@"status"] isEqualToString:[UserDataManager getObjectFromConfig:@"SUCCESS_CODE"]]) {
+            [SVProgressHUD dismiss];
+            [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+            [SVProgressHUD showSuccessWithStatus:@"反馈成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }else{
+            [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+            [SVProgressHUD showInfoWithStatus:[resultDic objectForKey:@"info"]];
+        }
+    } failure:^(AFHTTPRequestOperation *operation,NSError *error){
+        NSLog(@"%@",error);
+        [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+        [SVProgressHUD showErrorWithStatus:@"反馈失败!"];
+    }];
+}
+- (void)dismiss:(id)sender {
+    [SVProgressHUD dismiss];
 }
 -(void)onClickBack:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];

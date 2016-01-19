@@ -8,9 +8,12 @@
 
 #ifndef Config_h
 #define Config_h
+#import "AFNetWorking.h"
+#import "StringUtils.h"
+#import "UserDataManager.h"
+#import "SVProgressHUD.h"
 // UIColor Helper Macro
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0 blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
-
 // App Colors
 #define THEME_COLOR UIColorFromRGB(0x269a13)
 #define ALL_BACK_COLOR UIColorFromRGB(0xf0eff5)

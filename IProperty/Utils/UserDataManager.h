@@ -9,10 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface UserDataManager : NSObject
-+(void)saveUsername:(NSString *)username;
-+(id)readUsername;
-+(void)savePassWord:(NSString *)password;
-+(id)readPassWord;
-+(void)deleteUserInfo;
 +(id)getObjectFromConfig:(NSString *)key;
 @end
