@@ -27,4 +27,12 @@
     NSDictionary *resultDic=[NSJSONSerialization JSONObjectWithData:resData options:NSJSONReadingMutableLeaves error:nil];
     return resultDic;
 }
++(NSString *)getTimeByUnix:(NSString *)unixTime{
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:[unixTime floatValue]];
+    return [formatter stringFromDate:confromTimesp];
+}
 @end

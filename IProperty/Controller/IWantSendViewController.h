@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "checkLogin.h"
+#import "SendModel.h"
 @interface IWantSendViewController : UIViewController
 @property(nonatomic,strong) checkLogin *user_data;
+@property(nonatomic,strong)SendModel *send_data;
 @end

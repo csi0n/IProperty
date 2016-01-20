@@ -20,20 +20,28 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - FMDB (2.6):
+    - FMDB/standard (= 2.6)
+  - FMDB/standard (2.6)
+  - MJRefresh (3.1.0)
   - SVProgressHUD (2.0-beta)
   - UICKeyChainStore (2.1.0)
-  - YYModel (0.9.11)
+  - YYModel (0.9.12)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.0)
+  - FMDB (~> 2.6)
+  - MJRefresh (~> 3.1.0)
   - SVProgressHUD (= 2.0-beta)
   - UICKeyChainStore (~> 2.1.0)
   - YYModel (~> 0.9.11)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   SVProgressHUD: c83337f10ed32d701c423d519059a249973c8662
   UICKeyChainStore: f1cbd42216a113f0165de1e733e62905b8823432
-  YYModel: 82d9e3facd84b809a8d5e7aea170c7229ca2434b
+  YYModel: 33a27f41a995f4c36ff8178421bac9f221a9c7ea
 
 COCOAPODS: 0.39.0

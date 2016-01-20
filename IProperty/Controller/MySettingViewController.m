@@ -18,7 +18,6 @@
     UIButton *_back;
     UIScrollView *_scroll_main;
 }
-
 @end
 
 @implementation MySettingViewController

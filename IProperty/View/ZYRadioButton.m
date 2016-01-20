@@ -98,7 +98,6 @@ static NSMutableDictionary *rb_observers=nil;
     [_button setSelected:YES];
     [ZYRadioButton buttonSelected:self];
 }
-
 #pragma mark - Class level handler
 //RadioButton选中后调用的事件
 +(void)buttonSelected:(ZYRadioButton*)radioButton{

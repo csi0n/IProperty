@@ -18,11 +18,9 @@
     UIScrollView *_main_scroll;
     ZYRadioButton *rb1,*rb2;
 }
-
 @end
 int SEND_TYPE=0;
 @implementation IWantSendViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -93,6 +91,19 @@ int SEND_TYPE=0;
     _main_scroll.showsVerticalScrollIndicator = FALSE;
     _main_scroll.showsHorizontalScrollIndicator = FALSE;
     [self.view addSubview:_main_scroll];
+    if (_send_data!=nil) {
+        _title_send.text=_send_data.title;
+        _content_send.text=_send_data.content;
+        _code_send.text=_send_data.uid;
+        _name_send.text=_send_data.realname;
+        if ([_send_data.status isEqualToString:@"2"]) {
+            SEND_TYPE=2;
+            [self radioButtonSelectedAtIndex:0 inGroup:@"11"];
+        }else if ([_send_data.status isEqualToString:@"3"]){
+            SEND_TYPE=3;
+            [self radioButtonSelectedAtIndex:1 inGroup:@"11"];
+        }
+    }
 }
 -(void)radioButtonSelectedAtIndex:(NSUInteger)index inGroup:(NSString *)groupId{
     if (index==0) {
@@ -138,14 +149,23 @@ int SEND_TYPE=0;
     NSString *url=[NSString stringWithFormat:@"%@%@",[UserDataManager getObjectFromConfig:@"BASE_URL"],[UserDataManager getObjectFromConfig:@"url_insert"]];
     AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSDictionary *parameters =@{@"token":[UserDataManager getObjectFromConfig:@"DEFAULT_TOKEN"],@"title":title,@"content":content,@"type_id":[NSString stringWithFormat:@"%d",SEND_TYPE],@"village_id":_user_data.village_id,@"realname":name,@"uid":code};
+    NSDictionary *parameters;
+    if ([StringUtils isEmpty:_send_data.status]) {
+         parameters =@{@"token":[UserDataManager getObjectFromConfig:@"DEFAULT_TOKEN"],@"title":title,@"content":content,@"type_id":[NSString stringWithFormat:@"%d",SEND_TYPE],@"village_id":_user_data.village_id,@"realname":name,@"uid":code};
+    }else{
+        parameters =@{@"token":[UserDataManager getObjectFromConfig:@"DEFAULT_TOKEN"],@"title":title,@"content":content,@"type_id":[NSString stringWithFormat:@"%d",SEND_TYPE],@"village_id":_user_data.village_id,@"realname":name,@"uid":code,@"publish_id":_send_data.status};
+    }
     [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation,id responseObject) {
         manager.requestSerializer.HTTPShouldHandleCookies=YES;
         NSDictionary *resultDic=[StringUtils getDictionaryForJson:operation];
         if ([[resultDic objectForKey:@"status"] isEqualToString:[UserDataManager getObjectFromConfig:@"SUCCESS_CODE"]]) {
             [SVProgressHUD dismiss];
             [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+            if (_send_data!=nil) {
+                [SVProgressHUD showInfoWithStatus:@"修改成功！"];
+            }else {
             [SVProgressHUD showInfoWithStatus:@"发表成功！"];
+            }
             [self onClickBack:_back];
         }else{
             [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
@@ -153,7 +173,11 @@ int SEND_TYPE=0;
         }
     } failure:^(AFHTTPRequestOperation *operation,NSError *error){
         [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
-        [SVProgressHUD showErrorWithStatus:@"发表失败!"];
+        if (_send_data!=nil) {
+            [SVProgressHUD showInfoWithStatus:@"修改失败！"];
+        }else {
+            [SVProgressHUD showInfoWithStatus:@"发表失败！"];
+        }
     }];
 }
 - (void)dismiss:(id)sender {
@@ -166,7 +190,6 @@ int SEND_TYPE=0;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 /*
 #pragma mark - Navigation
 

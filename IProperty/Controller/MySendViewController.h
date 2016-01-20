@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SDRefresh.h"
 @interface MySendViewController : UIViewController
-
+@property(nonatomic, strong) UITableView *tableView;
 @end

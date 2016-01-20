@@ -11,4 +11,5 @@
 @interface StringUtils : NSObject
 + (BOOL) isEmpty:(NSString *)string;
 +(NSDictionary *)getDictionaryForJson:(AFHTTPRequestOperation *)op;
++(NSString *)getTimeByUnix:(NSString *)unixTime;
 @end

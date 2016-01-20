@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,22 +47,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>64B7D70E0C4B5F26E9750D0E8A62A8FA</key>
+		<key>8D50CA3A6E3A4600ADDFA174EFFDBE86</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>660C39BDE50361EDFAFE09BC91FDAB83</key>
+		<key>8F74D9EA91F4C43190670066BAC37D44</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83525322615CB38EDD454FC404DEF547</key>
+		<key>9F12FB4A63E20F601CFB2E64A65B57C1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FD90D1CF7A094C80F35EA88AB6215EB5</key>
+		<key>A8F09D91D0B7EDE3B96E7A4A71BF3E55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E201B64087DF59C8D1A76C218B80AE0D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EFCB4F2443F98F4EE4D67CD0AB37532B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
