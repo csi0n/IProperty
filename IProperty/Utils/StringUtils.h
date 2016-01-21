@@ -12,4 +12,5 @@
 + (BOOL) isEmpty:(NSString *)string;
 +(NSDictionary *)getDictionaryForJson:(AFHTTPRequestOperation *)op;
 +(NSString *)getTimeByUnix:(NSString *)unixTime;
++(NSString *)getUnixTime;
 @end

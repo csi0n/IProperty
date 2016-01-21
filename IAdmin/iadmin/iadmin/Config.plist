@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>url_checkUpdate</key>
+	<string>api.php/Admin/Index/checkUpdate</string>
+	<key>url_getBusinessInfo</key>
+	<string>api.php/Admin/Index/getBusinessInfo</string>
+	<key>url_logout</key>
+	<string>api.php/Admin/Index/logout</string>
+	<key>url_checkPost</key>
+	<string>api.php/Admin/Index/checkPost</string>
+	<key>url_record</key>
+	<string>api.php/Admin/Index/record</string>
+	<key>url_feed_back</key>
+	<string>api.php/Admin/Index/feedback</string>
+	<key>url_lists</key>
+	<string>api.php/Admin/Index/lists</string>
+	<key>url_login</key>
+	<string>api.php/Admin/Index/checklogin</string>
+	<key>keychain_password</key>
+	<string>cn.csi0n.iadmin.allinfor.password</string>
+	<key>keychain_username</key>
+	<string>cn.csi0n.iadmin.allinfor.username</string>
+	<key>keychain_all_info</key>
+	<string>cn.csi0n.iadmin.allinfor</string>
+	<key>SUCCESS_CODE</key>
+	<string>10</string>
+	<key>DEFAULT_TOKEN</key>
+	<string>93eeaa1966c22f675d91c6592b8502fa411f472d</string>
+	<key>BASE_URL</key>
+	<string>http://t.wuxiweb.com/zhihuishequ/</string>
+</dict>
+</plist>

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1E945EE479F29D54EFA38C42 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D60D13F5442CB8EA13C693 /* libPods.a */; };
+		BD18FCD11C505BBB00393165 /* ShowSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD18FCD01C505BBB00393165 /* ShowSearchResultViewController.m */; };
+		BD18FCD41C50621100393165 /* SearchKeyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BD18FCD31C50621100393165 /* SearchKeyModel.m */; };
 		BD1A2A141C4B38CE000039E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1A2A131C4B38CE000039E5 /* main.m */; };
 		BD1A2A171C4B38CE000039E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD1A2A161C4B38CE000039E5 /* AppDelegate.m */; };
 		BD1A2A1F1C4B38CE000039E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD1A2A1E1C4B38CE000039E5 /* Assets.xcassets */; };
@@ -63,6 +65,10 @@
 		352E9E5435A24C501A0E7740 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		86D60D13F5442CB8EA13C693 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E2EB483AD54BB64FE28832 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BD18FCCF1C505BBB00393165 /* ShowSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowSearchResultViewController.h; sourceTree = "<group>"; };
+		BD18FCD01C505BBB00393165 /* ShowSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowSearchResultViewController.m; sourceTree = "<group>"; };
+		BD18FCD21C50621100393165 /* SearchKeyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchKeyModel.h; sourceTree = "<group>"; };
+		BD18FCD31C50621100393165 /* SearchKeyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchKeyModel.m; sourceTree = "<group>"; };
 		BD1A2A0F1C4B38CE000039E5 /* IProperty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IProperty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1A2A131C4B38CE000039E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BD1A2A151C4B38CE000039E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -267,6 +273,8 @@
 				BD5FAD881C4F92BE00E5FC97 /* DetailViewController.m */,
 				BD7BFBA51C4FCA530034423A /* SearchViewController.h */,
 				BD7BFBA61C4FCA530034423A /* SearchViewController.m */,
+				BD18FCCF1C505BBB00393165 /* ShowSearchResultViewController.h */,
+				BD18FCD01C505BBB00393165 /* ShowSearchResultViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -312,6 +320,8 @@
 				BD7A67581C4D481D003949A5 /* checkLogin.m */,
 				BD5FAD711C4F221E00E5FC97 /* SendModel.h */,
 				BD5FAD721C4F221E00E5FC97 /* SendModel.m */,
+				BD18FCD21C50621100393165 /* SearchKeyModel.h */,
+				BD18FCD31C50621100393165 /* SearchKeyModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -501,6 +511,7 @@
 			files = (
 				BD40E3321C4CAA8000417BB9 /* UserDataManager.m in Sources */,
 				BD5B21C21C4C62260017DF3B /* MySendViewController.m in Sources */,
+				BD18FCD41C50621100393165 /* SearchKeyModel.m in Sources */,
 				BD40E32A1C4CA5C600417BB9 /* StringUtils.m in Sources */,
 				BD5FAD731C4F221E00E5FC97 /* SendModel.m in Sources */,
 				BD5B21C81C4C68790017DF3B /* UIPlaceholderTextView.m in Sources */,
@@ -521,6 +532,7 @@
 				BD7A67591C4D481D003949A5 /* checkLogin.m in Sources */,
 				BD1A2A171C4B38CE000039E5 /* AppDelegate.m in Sources */,
 				BD1A2A141C4B38CE000039E5 /* main.m in Sources */,
+				BD18FCD11C505BBB00393165 /* ShowSearchResultViewController.m in Sources */,
 				BD5FAD841C4F3A3C00E5FC97 /* SDRefreshView.m in Sources */,
 				BD5FAD7B1C4F39C000E5FC97 /* SDRefreshHeaderView.m in Sources */,
 				BD1A2A501C4B3A3A000039E5 /* LoginViewController.m in Sources */,

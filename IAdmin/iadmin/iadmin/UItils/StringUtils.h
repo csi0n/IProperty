@@ -1,0 +1,16 @@
+//
+//  StringUtils.h
+//  iadmin
+//
+//  Created by csi0n on 1/21/16.
+//  Copyright © 2016 csi0n. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <AFNetworking.h>
+@interface StringUtils : NSObject
++ (BOOL) isEmpty:(NSString *)string;
++(NSDictionary *)getDictionaryForJson:(AFHTTPRequestOperation *)op;
++(NSString *)getTimeByUnix:(NSString *)unixTime;
++(NSString *)getUnixTime;
+@end

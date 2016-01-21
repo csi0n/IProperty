@@ -35,4 +35,10 @@
     NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:[unixTime floatValue]];
     return [formatter stringFromDate:confromTimesp];
 }
++(NSString *)getUnixTime{
+    NSTimeInterval timeinterval=[[NSDate date] timeIntervalSince1970];
+    long dTime=[[NSNumber numberWithDouble:timeinterval]longValue];
+    NSString *tempTime=[NSString stringWithFormat:@"%ld",dTime];
+    return tempTime;
+}
 @end

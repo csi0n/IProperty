@@ -79,8 +79,13 @@
 -(void)initData{
 }
 -(void)onClickReg:(id)sender{
-    RegisterViewController *reg=[[RegisterViewController alloc]init];
-    [self.navigationController pushViewController:reg animated:YES];
+//    RegisterViewController *reg=[[RegisterViewController alloc]init];
+//    [self.navigationController pushViewController:reg animated:YES];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeFlat];
+    [self performSelector:@selector(dismiss:) withObject:nil afterDelay:3];
+    [SVProgressHUD showInfoWithStatus:@"接口未开放!"];
 }
 -(void)onClickSubmit:(id)sender{
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
