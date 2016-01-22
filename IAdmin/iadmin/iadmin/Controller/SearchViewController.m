@@ -81,7 +81,6 @@
         search_key.create_time=[resultSet stringForColumn:@"create_time"];
         [data addObject:search_key];
     }
-    
 }
 -(void)onClickSearch:(id)sender{
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];

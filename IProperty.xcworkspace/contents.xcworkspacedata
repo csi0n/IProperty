@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:IAdmin/iadmin/iadmin.xcodeproj">
+      location = "group:/Users/csi0n/Desktop/IOS/IProperty/IAdmin/iadmin/IAdmin.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:IProperty.xcodeproj">
